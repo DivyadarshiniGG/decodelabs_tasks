@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Drafted — Studio Dashboard for Hollow &amp; Finch</title>
+<meta name="description" content="Drafted is a lightweight studio operations dashboard for design and architecture practices — projects, time, and team, clearly measured.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Roboto:wght@400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<a class="skip-link" href="#main-content">Skip to main content</a>
+
+<div class="app-shell">
+
+  <!-- ===================== HEADER ===================== -->
+  <header class="app-header">
+    <div class="header-left">
+      <button class="icon-btn nav-toggle" id="navToggle" aria-label="Open navigation menu" aria-expanded="false" aria-controls="primaryNav">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+      </button>
+      <a href="#" class="brand">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 32 32"><path d="M4 28V4h10a8 8 0 0 1 0 16H10v8z"/><path d="M18 20l8 8" stroke-linecap="round"/></svg>
+        </span>
+        <span class="brand-text">Drafted</span>
+      </a>
+    </div>
+
+    <div class="header-search">
+      <svg class="search-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3" stroke-linecap="round"/></svg>
+      <label for="projectSearch" class="visually-hidden">Search projects</label>
+      <input type="search" id="projectSearch" placeholder="Search projects or clients…" autocomplete="off">
+    </div>
+
+    <div class="header-right">
+      <div class="notif-wrap">
+        <button class="icon-btn" id="notifToggle" aria-label="Notifications, 3 unread" aria-haspopup="true" aria-expanded="false" aria-controls="notifPanel">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 8a6 6 0 0 1 12 0c0 4 1.5 5.5 2 6H4c.5-.5 2-2 2-6z"/><path d="M10 19a2 2 0 0 0 4 0"/></svg>
+          <span class="notif-dot" id="notifDot" aria-hidden="true"></span>
+        </button>
+        <div class="notif-panel" id="notifPanel" role="menu" hidden>
+          <div class="notif-panel-head">
+            <h2>Notifications</h2>
+            <button class="text-btn" id="markAllRead">Mark all read</button>
+          </div>
+          <ul class="notif-list">
+            <li role="menuitem"><strong>Permit approved</strong> for Harbor View Pavilion. <span class="notif-time">2h ago</span></li>
+            <li role="menuitem">New markup on <strong>Birchwood Residence</strong> drawings. <span class="notif-time">5h ago</span></li>
+            <li role="menuitem"><strong>Invoice overdue</strong> — Maple &amp; Co. Office Fit-out. <span class="notif-time">1d ago</span></li>
+          </ul>
+        </div>
+      </div>
+      <div class="profile" tabindex="0">
+        <span class="avatar" aria-hidden="true">DD</span>
+        <span class="profile-name">Divya Darshini</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===================== PRIMARY NAV ===================== -->
+  <nav class="primary-nav" id="primaryNav" aria-label="Primary">
+    <ul>
+      <li><a href="#" class="nav-link is-active" aria-current="page">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="7" height="9"/><rect x="14" y="3" width="7" height="5"/><rect x="14" y="12" width="7" height="9"/><rect x="3" y="16" width="7" height="5"/></svg>
+        <span>Overview</span>
+      </a></li>
+      <li><a href="#projects" class="nav-link">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7h6l2 2h10v10H3z"/></svg>
+        <span>Projects</span>
+      </a></li>
+      <li><a href="#team" class="nav-link">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3"/><circle cx="17" cy="9" r="2.5"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6M14 20c0-2.2.9-4.2 2.3-5.6 2.6.3 4.7 2.6 4.7 5.6"/></svg>
+        <span>Team</span>
+      </a></li>
+      <li><a href="#tasks" class="nav-link">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12l5 5L20 6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span>Time &amp; Tasks</span>
+      </a></li>
+      <li><a href="#settings" class="nav-link">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M19 12a7 7 0 0 0-.1-1.2l2-1.6-2-3.4-2.4.6a7 7 0 0 0-2-1.2L14 3h-4l-.5 2.2a7 7 0 0 0-2 1.2l-2.4-.6-2 3.4 2 1.6a7 7 0 0 0 0 2.4l-2 1.6 2 3.4 2.4-.6a7 7 0 0 0 2 1.2L10 21h4l.5-2.2a7 7 0 0 0 2-1.2l2.4.6 2-3.4-2-1.6c.07-.4.1-.8.1-1.2z"/></svg>
+        <span>Settings</span>
+      </a></li>
+    </ul>
+  </nav>
+  <div class="nav-backdrop" id="navBackdrop" hidden></div>
+
+  <!-- ===================== MAIN ===================== -->
+  <main id="main-content" class="app-main">
+
+    <section class="hero" aria-labelledby="hero-heading">
+      <p class="eyebrow">Hollow &amp; Finch Studio</p>
+      <h1 id="hero-heading">Good afternoon, Divya. Here's where things stand.</h1>
+      <p class="hero-sub">6 projects moved forward this week and the crew logged 186 hours across the practice.</p>
+    </section>
+
+    <section class="stats" aria-label="Studio summary statistics">
+      <article class="stat-card">
+        <div class="stat-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 7h6l2 2h10v10H3z"/></svg></div>
+        <p class="stat-label">Active Projects</p>
+        <p class="stat-value">12</p>
+        <p class="stat-delta stat-up">+2 this month</p>
+      </article>
+      <article class="stat-card">
+        <div class="stat-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2" stroke-linecap="round"/></svg></div>
+        <p class="stat-label">Hours Logged, This Week</p>
+        <p class="stat-value">186h</p>
+        <p class="stat-delta stat-up">+14h vs last week</p>
+      </article>
+      <article class="stat-card">
+        <div class="stat-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="15" rx="1"/><path d="M4 9h16M8 3v4M16 3v4"/></svg></div>
+        <p class="stat-label">Tasks Due Today</p>
+        <p class="stat-value">7</p>
+        <p class="stat-delta stat-warn">3 unassigned</p>
+      </article>
+      <article class="stat-card">
+        <div class="stat-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3l2.6 5.6 6.1.6-4.6 4.1 1.3 6-5.4-3.2-5.4 3.2 1.3-6-4.6-4.1 6.1-.6z"/></svg></div>
+        <p class="stat-label">Client Satisfaction</p>
+        <p class="stat-value">4.8<span class="stat-unit">/5</span></p>
+        <p class="stat-delta stat-up">Based on 9 reviews</p>
+      </article>
+    </section>
+
+    <section class="content-grid">
+
+      <section class="panel chart-panel" aria-labelledby="chart-heading">
+        <div class="panel-head">
+          <h2 id="chart-heading">Studio Output</h2>
+          <div class="segmented" role="group" aria-label="Chart time period">
+            <button class="segmented-btn is-active" data-period="week" aria-pressed="true">Week</button>
+            <button class="segmented-btn" data-period="month" aria-pressed="false">Month</button>
+            <button class="segmented-btn" data-period="year" aria-pressed="false">Year</button>
+          </div>
+        </div>
+        <p class="visually-hidden" id="chartSummary" aria-live="polite"></p>
+        <div class="bar-chart" id="barChart"></div>
+        <table class="visually-hidden" id="chartTable">
+          <caption>Hours logged by period, alternate text view of the chart above</caption>
+          <thead><tr><th scope="col">Label</th><th scope="col">Hours</th></tr></thead>
+          <tbody id="chartTableBody"></tbody>
+        </table>
+      </section>
+
+      <section class="panel" id="team" aria-labelledby="team-heading">
+        <div class="panel-head">
+          <h2 id="team-heading">Team Availability</h2>
+        </div>
+        <ul class="team-list">
+          <li><span class="avatar avatar-sm">EM</span><span class="team-info"><strong>Elena Marsh</strong><small>Lead Architect</small></span><span class="status status-available">Available</span></li>
+          <li><span class="avatar avatar-sm">JO</span><span class="team-info"><strong>Jamie Okafor</strong><small>Interior Design</small></span><span class="status status-busy">In a meeting</span></li>
+          <li><span class="avatar avatar-sm">TS</span><span class="team-info"><strong>Theo Suárez</strong><small>Structural Eng.</small></span><span class="status status-available">Available</span></li>
+          <li><span class="avatar avatar-sm">NP</span><span class="team-info"><strong>Nadia Petrov</strong><small>Draftsperson</small></span><span class="status status-off">Off today</span></li>
+          <li><span class="avatar avatar-sm">DD</span><span class="team-info"><strong>Divya Darshini</strong><small>Project Manager</small></span><span class="status status-available">Available</span></li>
+        </ul>
+      </section>
+
+    </section>
+
+    <section class="panel projects-panel" id="projects" aria-labelledby="projects-heading">
+      <div class="panel-head">
+        <h2 id="projects-heading">Recent Projects</h2>
+        <p class="result-count" id="resultCount" aria-live="polite">5 of 5 projects</p>
+      </div>
+
+      <ul class="project-list" id="projectList">
+        <li class="project-card">
+          <div class="project-main">
+            <h3>Riverside Loft Renovation</h3>
+            <p class="project-client">Eastvale Residential · Due Sep 14</p>
+          </div>
+          <div class="project-progress" aria-hidden="true"><span style="width:72%"></span></div>
+          <span class="badge badge-track">On Track</span>
+        </li>
+        <li class="project-card">
+          <div class="project-main">
+            <h3>Maple &amp; Co. Office Fit-out</h3>
+            <p class="project-client">Maple &amp; Co. · Due Oct 2</p>
+          </div>
+          <div class="project-progress" aria-hidden="true"><span style="width:38%"></span></div>
+          <span class="badge badge-risk">At Risk</span>
+        </li>
+        <li class="project-card">
+          <div class="project-main">
+            <h3>Birchwood Residence</h3>
+            <p class="project-client">Private Client · Due Aug 30</p>
+          </div>
+          <div class="project-progress" aria-hidden="true"><span style="width:91%"></span></div>
+          <span class="badge badge-ahead">Ahead</span>
+        </li>
+        <li class="project-card">
+          <div class="project-main">
+            <h3>Harbor View Pavilion</h3>
+            <p class="project-client">Harbor Trust · Due Nov 20</p>
+          </div>
+          <div class="project-progress" aria-hidden="true"><span style="width:55%"></span></div>
+          <span class="badge badge-track">On Track</span>
+        </li>
+        <li class="project-card">
+          <div class="project-main">
+            <h3>Kestrel Studio Extension</h3>
+            <p class="project-client">Kestrel Arts Collective · Due Dec 5</p>
+          </div>
+          <div class="project-progress" aria-hidden="true"><span style="width:20%"></span></div>
+          <span class="badge badge-track">On Track</span>
+        </li>
+      </ul>
+      <p class="empty-state" id="emptyState" hidden>No projects match your search. Try a different name or client.</p>
+    </section>
+
+    <section class="panel tasks-panel" id="tasks" aria-labelledby="tasks-heading">
+      <div class="panel-head">
+        <h2 id="tasks-heading">Today's Tasks</h2>
+      </div>
+      <form class="task-form" id="taskForm">
+        <label for="taskInput" class="visually-hidden">Add a task</label>
+        <input type="text" id="taskInput" placeholder="Add a task, e.g. Send revised elevations to Kestrel" required>
+        <button type="submit" class="btn-primary">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14" stroke-linecap="round"/></svg>
+          <span>Add</span>
+        </button>
+      </form>
+      <ul class="task-list" id="taskList">
+        <li><label><input type="checkbox"> Confirm site visit time with Harbor Trust</label></li>
+        <li><label><input type="checkbox" checked> Upload structural calcs for Birchwood</label></li>
+        <li><label><input type="checkbox"> Chase Maple &amp; Co. invoice #1042</label></li>
+      </ul>
+      <p class="empty-state" id="taskEmptyState" hidden>All clear — nothing left on today's list.</p>
+    </section>
+
+    <section class="panel" id="settings" aria-labelledby="settings-heading">
+      <div class="panel-head">
+        <h2 id="settings-heading">Settings</h2>
+      </div>
+
+      <h3 class="settings-subhead">Studio profile</h3>
+      <form class="settings-form" id="settingsForm" novalidate>
+        <div class="field">
+          <label for="studioName">Studio name</label>
+          <input type="text" id="studioName" value="Hollow &amp; Finch Studio" required>
+          <p class="field-error" id="studioNameError" hidden>Studio name can't be empty.</p>
+        </div>
+        <div class="field">
+          <label for="contactEmail">Contact email</label>
+          <input type="email" id="contactEmail" value="divya@hollowfinch.studio" required>
+          <p class="field-error" id="contactEmailError" hidden>Enter a valid email address.</p>
+        </div>
+        <div class="settings-form-actions">
+          <button type="submit" class="btn-primary">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12l5 5L20 6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span>Save changes</span>
+          </button>
+          <p class="save-confirmation" id="saveConfirmation" role="status" hidden>Saved.</p>
+        </div>
+      </form>
+
+      <h3 class="settings-subhead">Appearance</h3>
+      <div class="settings-row">
+        <div>
+          <p class="settings-row-label">Theme</p>
+          <p class="settings-row-hint">Switches the whole dashboard between light and dark surfaces.</p>
+        </div>
+        <div class="segmented" role="group" aria-label="Appearance theme">
+          <button class="segmented-btn is-active" id="themeLight" data-theme="light" aria-pressed="true">Light</button>
+          <button class="segmented-btn" id="themeDark" data-theme="dark" aria-pressed="false">Dark</button>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="app-footer">
+    <div class="footer-brand">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 32 32"><path d="M4 28V4h10a8 8 0 0 1 0 16H10v8z"/><path d="M18 20l8 8" stroke-linecap="round"/></svg>
+      </span>
+      <div>
+        <p class="footer-title">Drafted</p>
+        <p class="footer-tagline">Studio operations, clearly measured.</p>
+      </div>
+    </div>
+    <ul class="footer-links">
+      <li><a href="#">Documentation</a></li>
+      <li><a href="#">Support</a></li>
+      <li><a href="#">Privacy</a></li>
+    </ul>
+    <p class="footer-meta">© 2026 Drafted for Hollow &amp; Finch Studio. Built as Project 1 for the DecodeLabs Full Stack Internship.</p>
+  </footer>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
