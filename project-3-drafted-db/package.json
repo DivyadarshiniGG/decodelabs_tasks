@@ -1,0 +1,20 @@
+{
+  "name": "drafted-db",
+  "version": "1.0.0",
+  "description": "Backend API for Drafted, now with real SQLite persistence — DecodeLabs Full Stack Internship, Project 3",
+  "main": "server.js",
+  "type": "commonjs",
+  "engines": {
+    "node": ">=22.5.0"
+  },
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js",
+    "test": "node test-api.js",
+    "test:constraints": "node test-db-constraints.js",
+    "reset-db": "node reset-db.js"
+  },
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}
